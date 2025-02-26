@@ -11,7 +11,7 @@ import Pagination from "../Pagination/Pagination.tsx";
 import classes from "./MealsList.module.scss";
 
 const MealsList = () => {
-  const [category, setCategory] = useState<string>('');
+  // const [category, setCategory] = useState<string>('');
   const [pagination, setPagination] = useState<PaginationStateInterface>({
     currentPage: 0,
     numberOfPages: 0,
@@ -29,10 +29,13 @@ const MealsList = () => {
   }, [cachedData]);
   return (
     <section className={classes.mealsList}>
+      <select>
+
+      </select>
       <ul>
         {cachedData?.meals
-            ?.filter(meal => meal.strCategory===category)
-            .filter(
+            // ?.filter(meal => meal.strCategory===category)
+            ?.filter(
             (_, index) =>
               index >= pagination.currentPage * 10 &&
               index < pagination.currentPage * 10 + 10,

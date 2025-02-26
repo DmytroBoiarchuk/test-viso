@@ -18,7 +18,7 @@ const RecipePage = () => {
   const queryClient = useQueryClient();
   const cacheKeyCtx = useContext(CacheKeyContext);
 
-  const { isLoading, isError, error, refetch } = useQuery({
+  const { refetch } = useQuery({
     queryKey: ["search", params.recipeId],
     queryFn: () => searchSingleMealRequest(params.recipeId),
     staleTime: Infinity,

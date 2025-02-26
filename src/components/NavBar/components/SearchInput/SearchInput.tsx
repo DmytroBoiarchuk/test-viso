@@ -13,7 +13,7 @@ const SearchInput = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ["search", searchTerm],
     queryFn: () => searchRequest(searchTerm),
     staleTime: Infinity,
