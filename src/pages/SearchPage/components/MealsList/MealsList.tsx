@@ -9,33 +9,49 @@ import {
 import MealCard from "../MealCard/MealCard.tsx";
 import Pagination from "../Pagination/Pagination.tsx";
 import classes from "./MealsList.module.scss";
+import { categories } from "../../../../store/categories.ts";
 
 const MealsList = () => {
-  // const [category, setCategory] = useState<string>('');
+  const [category, setCategory] = useState<string>("No Filter");
   const [pagination, setPagination] = useState<PaginationStateInterface>({
     currentPage: 0,
     numberOfPages: 0,
   });
+
   const queryClient = useQueryClient();
   const cacheKeyCtx = useContext(CacheKeyContext);
   const cachedData: RecipesResponseInterface | undefined =
     queryClient.getQueryData(["search", cacheKeyCtx.searchTerm]);
+
+  const filteredData = cachedData?.meals?.filter(
+    (meal) => meal.strCategory === category || category === "No Filter",
+  );
   useEffect(() => {
-    if (cachedData && cachedData.meals)
-      setPagination((prevState) => ({
-        ...prevState,
-        numberOfPages: Math.ceil(cachedData!.meals!.length / 10),
-      }));
-  }, [cachedData]);
+    if (filteredData)
+      setPagination({
+        currentPage: 0,
+        numberOfPages: Math.ceil(filteredData.length / 10),
+      });
+  }, [cachedData, category]);
   return (
     <section className={classes.mealsList}>
-      <select>
-
-      </select>
+      <div className={classes.filter}>
+        <label>Filter by category</label>
+        <select
+          onChange={(e) => {
+            setCategory(e.target.value);
+          }}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
       <ul>
-        {cachedData?.meals
-            // ?.filter(meal => meal.strCategory===category)
-            ?.filter(
+        {filteredData
+          ?.filter(
             (_, index) =>
               index >= pagination.currentPage * 10 &&
               index < pagination.currentPage * 10 + 10,
