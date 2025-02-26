@@ -1,0 +1,36 @@
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 0 20px;
+  position: relative;
+  input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+  span{
+    position: absolute;
+    left: calc(100% + 10px);
+    animation: rotateAnimation 2s infinite linear;
+  }
+}
+

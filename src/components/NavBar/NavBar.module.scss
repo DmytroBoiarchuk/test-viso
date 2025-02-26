@@ -1,0 +1,10 @@
+.navBar {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #6c6565;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 12px;
+  box-sizing: border-box;
+}

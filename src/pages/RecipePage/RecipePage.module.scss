@@ -1,0 +1,45 @@
+.recipePage{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+
+  img{
+    height: 400px;
+    border-radius: 10px;
+    margin-right: 30px;
+  }
+  .aboutMeal{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+    justify-content: start;
+    align-items: start;
+    .listOfIngredients{
+      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 180px;
+      align-content: start;
+      justify-content: start;
+      align-items: start;
+      column-gap: 30px;
+    }
+  }
+  .aboutContainer{
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    display: flex;
+  }
+  align-items: center;
+  .instruction{
+    padding: 30px;
+    text-align: center;
+  }
+}

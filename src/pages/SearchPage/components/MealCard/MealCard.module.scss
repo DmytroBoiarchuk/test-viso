@@ -1,0 +1,60 @@
+.mealCard{
+  position: relative;
+  width: 50%;
+  display: flex;
+  background-color: #6c6565;
+  border-radius: 15px;
+  height: 250px;
+  padding: 10px;
+  margin: 20px;
+  h1{
+    margin:0;
+  }
+  h3{
+    margin:0;
+  }
+  img{
+    height: 200px;
+    border-radius: 10px;
+
+  }
+  .aboutContainer{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    .listOfIngredients{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 180px;
+      align-content: center;
+      justify-content: start;
+      align-items: start;
+      column-gap: 50px;
+    }
+  }
+  .savedSign {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 20px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0);
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .fullRecipePage{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    text-decoration: none;
+    color: #b6b5b5;
+    font-size: 25px;
+    transition: color 0.3s ease;
+    &:hover{
+      color: #fffdfd;
+    }
+  }
+}

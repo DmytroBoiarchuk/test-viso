@@ -1,0 +1,23 @@
+.pagination {
+  button {
+    width: 36px;
+    height: 36px;
+    background-color: #504b4b;
+    color: #dad8d8;
+    cursor: pointer;
+    border: #242424 1px solid;
+    &:hover {
+      background-color: #575454;
+    }
+  }
+  .active{
+    background-color: #8f8f8f;
+    &:hover{
+      background-color: #8f8f8f;
+    }
+  }
+    .displayNon{
+      display: none;
+    }
+}
+

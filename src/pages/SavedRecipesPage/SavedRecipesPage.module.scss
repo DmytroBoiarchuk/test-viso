@@ -1,0 +1,12 @@
+.savedRecipesPage {
+  display: flex;
+  article {
+    ul {
+      a {
+        text-decoration: none;
+      }
+      list-style: none;
+    }
+    width: calc(100vw - 50%);
+  }
+}
