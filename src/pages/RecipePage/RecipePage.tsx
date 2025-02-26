@@ -56,7 +56,7 @@ const RecipePage = () => {
           <h3>Ingredients:</h3>
           <ul className={recipeCardClasses.listOfIngredients}>
             {ingredients.map((value, index) => (
-              <li key={index}>{value}</li>
+              <li key={index}><p className={classes.ingredient}>{value}</p></li>
             ))}
           </ul>
         </div>

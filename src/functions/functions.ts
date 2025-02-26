@@ -17,8 +17,11 @@ export function findMeal (mealId: string | undefined, mealsArr: MealInterface[] 
 }
 
 export function deriveIngredients(meal: MealInterface | undefined): (string | null )[] {
-    return Object.keys(meal!)
+    const igredients =  Object.keys(meal!)
         .filter((key) => key.startsWith("strIngredient"))
         .map((key) => meal![key as keyof MealInterface])
         .filter((value) => value !== "" && value !== null);
+    const mesures = Object.keys(meal!).filter((key) => key.startsWith("strMeasure")).map((key) => meal![key as keyof MealInterface])
+        .filter((value) => value !== "" && value !== null);
+    return igredients.map((ing, index) => `${mesures[index]} ${ing}`)
 }

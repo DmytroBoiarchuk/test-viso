@@ -8,7 +8,6 @@ const SavedRecipesPage = () => {
   const storedArray: SavedMealInterface[] = useContext(SavedMealsContext).storedArray;
   const allIngredients = storedArray.map(recipe => recipe.ingredients).flat();
   const uniqueIngredients = [...new Set(allIngredients)].join(", ")
-    console.log(uniqueIngredients);
   return <div className={classes.savedRecipesPage}>
       <article>
           <h1>Your Recipes</h1>

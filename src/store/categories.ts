@@ -1,5 +1,5 @@
 export const categories = [
-    "No Filter",
+  "No Filter",
   "Beef",
   "Chicken",
   "Dessert",
