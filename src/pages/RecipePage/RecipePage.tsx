@@ -31,12 +31,12 @@ const RecipePage = () => {
   useEffect(() => {
     async function refetchRecipe() {
       const result = await refetch();
-      return result.data;
+      return  result.data;
     }
 
     if (!cachedData) {
-      const meal = refetchRecipe() as unknown as RecipesResponseInterface;
-      setMeal(meal.meals?.[0]);
+      console.log('refetch')
+      refetchRecipe().then((meal) => setMeal(meal?.meals?.[0]));
     } else {
       const meal = findMeal(params.recipeId, cachedData.meals);
       setMeal(meal);
